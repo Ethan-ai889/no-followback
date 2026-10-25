@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "\u672a\u56de\u5173\u7b5b\u9009",
+  "version": "1.5.2",
+  "description": "\u626b\u63cf X \u6b63\u5728\u5173\u6ce8\u5217\u8868\uff0c\u7b5b\u51fa\u4f60\u5173\u6ce8\u4e86\u4f46\u5bf9\u65b9\u672a\u56de\u5173\u7684\u8d26\u53f7\uff0c\u65b9\u4fbf\u9010\u4e2a\u624b\u52a8\u53d6\u5173\u3002",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "sidePanel",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://twitter.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "\u672a\u56de\u5173\u7b5b\u9009",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*/following*",
+        "https://twitter.com/*/following*",
+        "https://x.com/*/followers*",
+        "https://twitter.com/*/followers*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

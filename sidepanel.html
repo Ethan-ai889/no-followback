@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>未回关筛选</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <header>
+    <h1>未回关筛选</h1>
+    <p class="hint">先点「打开正在关注」（会识别当前登录账号）。扫描只列出你关注了但对方未回关的人。「忽略」用于想继续关注的大V；取关请手动。仅支持电脑版 Edge / Chromium。</p>
+  </header>
+
+  <div class="actions">
+    <button id="open-following" type="button">打开正在关注</button>
+    <button id="scan" type="button" class="primary">开始扫描</button>
+    <button id="abort" type="button" class="danger" disabled>停止</button>
+    <button id="export" type="button" disabled>导出名单</button>
+    <button id="clear-results" type="button" class="ghost">清空扫描结果</button>
+    <button id="clear-ignored" type="button" class="ghost">清空忽略名单</button>
+  </div>
+  <p id="status" role="status">就绪</p>
+
+  <div class="summary" id="summary" hidden>
+    <span>扫描到 <b id="sum-total">0</b> 人</span>
+    <span>回关 <b id="sum-back">0</b></span>
+    <span>未回关(原始) <b id="sum-raw">0</b></span>
+    <span>已忽略 <b id="sum-ignored">0</b></span>
+    <span>待处理 <b id="sum-pending">0</b></span>
+  </div>
+
+  <label class="filter">
+    <input type="checkbox" id="hide-ignored" checked />
+    隐藏已忽略
+  </label>
+
+  <ul id="list"></ul>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
