@@ -193,7 +193,7 @@ function render() {
   listEl.innerHTML = '';
   updateSummary();
   if (!items.length) {
-    listEl.innerHTML = '<li class="empty">暂无待处理未回关账号（或已全部忽略）。</li>';
+    listEl.innerHTML = '<li class="empty">暂无待处理的取关候选人（或已全部忽略）。</li>';
     exportBtn.disabled = !state.noFollowBack.length;
     return;
   }

@@ -290,7 +290,7 @@
     followingPage: isFollowingPage(),
     href: location.href,
     scanning: api.scanning,
-    version: '1.5.2',
+    version: '1.5.3',
   });
   api.abort = () => { api.abortScan = true; };
 
